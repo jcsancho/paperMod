@@ -1,0 +1,17 @@
+baseURL: ""
+languageCode: en-us
+title: DemoSite 
+theme: PaperMod
+menu:
+  main:
+    - identifier: about
+      name: about
+      pre: <i class='fa fa-heart'></i>
+      url: /about/
+      weight: 120
+   
+    - identifier: posts
+      name: posts
+      pre: <i class='fa fa-heart'></i>
+      url: /posts/
+      weight: 110
