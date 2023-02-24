@@ -6,7 +6,9 @@ tags: ["prompts"]
 categories: ["seo"]
 ---
 
-# This is my post
+# This is my post 
+Hello everybody
+
 go to my [second post](/posts/second/)
 
 
