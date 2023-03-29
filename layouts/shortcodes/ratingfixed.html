@@ -1,0 +1,36 @@
+{{ $content := .Inner }}
+{{ $width := .Get "width" }}
+{{ $size := .Get "size" | default "18px" }}
+{{ $numStars := .Get "stars" | default "0" }}
+<div class="box" style="width: {{ $width }};">
+  {{ $lines := split $content "\n" }}
+  {{ range $lines }}
+    {{ if eq $numStars "1" }}
+        {{ if ne (trim . " ") "" }}<span class="star" style="font-size: {{ $size }};">&#9733;</span> {{ . }}<br>{{ end }}
+      {{ else if eq $numStars "2" }}
+        {{ if ne (trim . " ") "" }}<span class="star" style="font-size: {{ $size }};">&#9733;&#9733;</span> {{ . }}<br>{{ end }}
+      {{ else if eq $numStars "3" }}
+         {{ if ne (trim . " ") "" }}<span class="star" style="font-size: {{ $size }};">&#9733;&#9733;&#9733;</span> {{ . }}<br>{{ end }}
+      {{ else if eq $numStars "4" }}
+        {{ if ne (trim . " ") "" }}<span class="star" style="font-size: {{ $size }};">&#9733;&#9733;&#9733;&#9733;</span> {{ . }}<br>{{ end }}
+      {{ else if eq $numStars "5" }}
+        {{ if ne (trim . " ") "" }}<span class="star" style="font-size: {{ $size }};">&#9733;&#9733;&#9733;&#9733;&#9733;</span> {{ . }}<br>{{ end }}
+      {{ else }}
+        {{ if ne (trim . " ") "" }}<br>{{ end }}
+      {{ end }}
+  {{ end }}
+</div>
+
+<style>
+.box {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  color: #000;
+}
+.star {
+  margin-right: 5px;
+  color: gold;
+}
+</style>

@@ -1,0 +1,11 @@
+{{- $stars := slice "fa-star-o" "fa-star-o" "fa-star-o" "fa-star-o" "fa-star-o" -}}
+{{- range $index, $element := $stars -}}
+    {{- $rating := .Get "rating" | default "0" | int -}}
+    {{- if lt $index $rating -}}
+        {{- $stars.Set $index "fa-star" -}}
+        {{- $stars = slice $stars -}}
+        {{- $stars = append $stars "fa-star-o" -}}
+    {{- end -}}
+    <i class="fa {{ $element }}"></i>
+{{- end -}}
+<span class="rating-text">{{ .Get "rating" | default "0" | int }} stars</span>

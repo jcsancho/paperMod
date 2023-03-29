@@ -1,0 +1,22 @@
+{{ $content := .Inner }}
+{{ $width := .Get "width" }}
+<div class="box" style="width: {{ $width }};">
+  {{ $lines := split $content "\n" }}
+  {{ range $lines }}
+    {{ if ne (trim . " ") "" }}<span class="check">✅</span> {{ . }}<br>{{ end }}
+  {{ end }}
+</div>
+
+<style>
+.box {
+  background-color: #ddd;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  color: #000;
+}
+.check {
+  font-size: 18px;
+  margin-right: 5px;
+}
+</style>

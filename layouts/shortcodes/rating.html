@@ -1,0 +1,87 @@
+{{ $content := .Inner }}
+{{ $width := .Get "width" }}
+{{ $size := .Get "size" | default "18px" }}
+{{ $numStars1 := .Get "stars1" | default "0" }}
+{{ $numStars2 := .Get "stars2" | default "0" }}
+{{ $numStars3 := .Get "stars3" | default "0" }}
+{{ $numStars4 := .Get "stars4" | default "0" }}
+{{ $numStars5 := .Get "stars5" | default "0" }}
+<div class="box" style="width: {{ $width }};">
+  {{ $lines := split $content "\n" }}
+  {{ range $i, $line := $lines }}
+   {{ if eq $i 1 }}
+    {{ if ne (trim $line " ") "" }}
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars1 0 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars1 1 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars1 2 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars1 3 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars1 4 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+         {{ $line }}<br>
+       {{ end }}
+    {{ end }}
+
+
+    {{ if eq $i 2 }}
+    {{ if ne (trim $line " ") "" }}
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars2 0 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars2 1 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars2 2 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars2 3 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars2 4 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+         {{ $line }}<br>
+       {{ end }}
+    {{ end }}
+
+
+     {{ if eq $i 3 }}
+    {{ if ne (trim $line " ") "" }}
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars3 0 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars3 1 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars3 2 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars3 3 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars3 4 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+         {{ $line }}<br>
+       {{ end }}
+    {{ end }}
+
+
+     {{ if eq $i 4 }}
+    {{ if ne (trim $line " ") "" }}
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars4 0 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars4 1 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars4 2 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars4 3 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars4 4 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+         {{ $line }}<br>
+       {{ end }}
+    {{ end }}
+
+
+     {{ if eq $i 5 }}
+    {{ if ne (trim $line " ") "" }}
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars5 0 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars5 1 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars5 2 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars5 3 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+        <span class="star" style="font-size: {{ $size }}; color: {{ if gt $numStars5 4 }}gold{{ else }}gray{{ end }};">&#9733;</span>
+         {{ $line }}<br>
+       {{ end }}
+    {{ end }}
+
+
+  {{ end }}
+</div>
+
+<style>
+.box {
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #999;
+  border-radius: 5px;
+  color: #000;
+}
+.star {
+  margin-right: 5px;
+  color: gold;
+}
+</style>
